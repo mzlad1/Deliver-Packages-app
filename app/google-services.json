@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "290769813284",
+    "project_id": "dileveryman-58703",
+    "storage_bucket": "dileveryman-58703.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290769813284:android:c8b7897e744bde2b037db1",
+        "android_client_info": {
+          "package_name": "com.example.packagesapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDToHTJT6R2ctsT61_RyIu6UmapFCh-5GI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

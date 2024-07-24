@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="180dp"
+            android:src="@drawable/newbox"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receiver Name"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/ReceiverName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Receiver Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receiver Phone"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/ReceiverPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Receiver Phone"
+            android:inputType="text"
+            android:background="@drawable/edittext_background"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sender Name"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/SenderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sender Name"
+            android:inputType="text"
+            android:background="@drawable/edittext_background"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price"
+            android:inputType="text"
+            android:background="@drawable/edittext_background"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/addPackageButton"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text="Add Package" />
+
+</LinearLayout>
+    </ScrollView>
