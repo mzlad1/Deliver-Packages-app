@@ -3,9 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="10dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -31,6 +30,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginTop="17dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -41,13 +41,6 @@
                     android:textColor="@android:color/darker_gray"
                     android:text="Receiver" />
 
-                <TextView
-                    android:id="@+id/receiver_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/darker_gray"
-                    android:text="Receiver Phone" />
 
                 <TextView
                     android:id="@+id/sender_name"
@@ -57,13 +50,6 @@
                     android:textColor="@android:color/darker_gray"
                     android:text="Sender" />
 
-                <TextView
-                    android:id="@+id/price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/darker_gray"
-                    android:text="Price" />
             </LinearLayout>
         </LinearLayout>
 

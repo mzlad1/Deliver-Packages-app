@@ -57,6 +57,10 @@ class signUp : AppCompatActivity() {
             binding.email.error = "Email is required"
             valid = false
         }
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.email.error = "Invalid email address"
+            valid = false
+        }
         if (password.isEmpty()) {
             binding.password.error = "Password is required"
             valid = false
@@ -104,7 +108,7 @@ class signUp : AppCompatActivity() {
                                         val user = UserInfo(username, email, password, name, phone, address)
                                         val dbHelper = DatabaseHelper()
                                         dbHelper.addUser(this, user)
-                                        val sharedPreferences = getSharedPreferences("loginPref", MODE_PRIVATE)
+                                        sharedPreferences = getSharedPreferences("loginPref", MODE_PRIVATE)
                                         val editor = sharedPreferences.edit()
                                         editor.putString("username", user.username)
                                         editor.putString("email", user.email)
@@ -113,7 +117,8 @@ class signUp : AppCompatActivity() {
                                         editor.putString("address", user.address)
                                         editor.putBoolean("isLoggedIn", true)
                                         editor.apply()
-                                        val intent = Intent(this, congrats::class.java)
+
+                                        val intent = Intent(this@signUp, MainActivity::class.java)
                                         startActivity(intent)
                                         finish()
                                     }

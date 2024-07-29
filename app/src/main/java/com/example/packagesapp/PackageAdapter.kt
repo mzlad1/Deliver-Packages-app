@@ -28,8 +28,6 @@ class PackageAdapter(private val context: Context, private val packageList: List
         fun bind(packageItem: Package) {
             binding.receiverName.text = "Receiver: ${packageItem.receiver}"
             binding.senderName.text = "Sender: ${packageItem.sender}"
-            binding.receiverNumber.text = "Phone: ${packageItem.receiverPhone}"
-            binding.price.text = "Price: ${packageItem.price}"
 
             binding.deliveryButton.setOnClickListener {
                 sharedPreferences.edit().apply {
@@ -37,7 +35,7 @@ class PackageAdapter(private val context: Context, private val packageList: List
                     putString("receiverName", packageItem.receiver)
                     putString("senderName", packageItem.sender)
                     putString("receiverPhone", packageItem.receiverPhone)
-                    putString("price", packageItem.price)
+                    putString("price", packageItem.price.toString())
                     apply()
                 }
                 onDeliverClick(packageItem)

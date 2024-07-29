@@ -29,7 +29,7 @@ class DatabaseHelper {
                                     document.getString("receiver")!!,
                                     document.getString("sender")!!,
                                     document.getString("receiverPhone")!!,
-                                    document.getString("price")!!
+                                    document.getString("price")!!.toDoubleOrNull() ?: 0.0
                                 )
                                 packages.add(newPackage)
                             }
@@ -108,7 +108,7 @@ class DatabaseHelper {
                     document.getString("receiver") ?: "Unknown",
                     document.getString("sender") ?: "Unknown",
                     document.getString("receiverPhone") ?: "Unknown",
-                    document.getString("price") ?: "0"
+                    document.getDouble("price") ?: 0.0
                 )
 
                 callback.onCallback(packageDetails)

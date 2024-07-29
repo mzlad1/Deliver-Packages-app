@@ -34,7 +34,7 @@ class AddFragment : Fragment() {
             val receiver = binding.ReceiverName.text.toString()
             val sender = binding.SenderName.text.toString()
             val receiverPhone = binding.ReceiverPhone.text.toString()
-            val price = binding.Price.text.toString()
+            val price = binding.Price.text.toString().toDouble()
             val newPackage = Package(receiver, sender, receiverPhone, price)
             val databaseHelper = DatabaseHelper()
             databaseHelper.addPackage(requireContext(), username, newPackage)

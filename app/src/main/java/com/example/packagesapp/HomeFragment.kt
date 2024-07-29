@@ -19,9 +19,11 @@ class HomeFragment : Fragment() {
     private lateinit var packageList: MutableList<Package>
     private lateinit var databaseHelper: DatabaseHelper
     lateinit var emptyTextView : TextView
+    lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,11 +36,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(action)
         }
 
-        recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = packageAdapter
-        emptyTextView = view.findViewById(R.id.emptyTextView)
-
+        emptyTextView = binding.emptyTextView
 
         databaseHelper.loadPackages(requireContext(), object : PackagesCallback {
             override fun onCallback(packages: List<Package>) {
@@ -54,6 +55,33 @@ class HomeFragment : Fragment() {
                 }
             }
         })
+
+
+        fun refreshPackages() {
+            binding.swipeRefreshLayout.isRefreshing = true
+
+            databaseHelper.loadPackages(requireContext(), object : PackagesCallback {
+                override fun onCallback(packages: List<Package>) {
+                    packageList.clear()
+                    packageList.addAll(packages)
+                    packageAdapter.notifyDataSetChanged()
+
+                    if (packageList.isEmpty()) {
+                        recyclerView.visibility = View.GONE
+                        emptyTextView.visibility = View.VISIBLE
+                    } else {
+                        recyclerView.visibility = View.VISIBLE
+                        emptyTextView.visibility = View.GONE
+                    }
+
+                    binding.swipeRefreshLayout.isRefreshing = false
+                }
+            })
+        }
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            refreshPackages()
+        }
 
     }
 }

@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Price"
-            android:inputType="text"
+            android:inputType="number"
             android:background="@drawable/edittext_background"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
